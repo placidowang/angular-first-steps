@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Http } from '@angular/http'
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular-simpletalk';
+  constructor(private _httpService: Http) { }
+  // title = 'angular-simpletalk';
+  accessPointUrl: string = 'https://localhost:44345/api/values';
+  apiValues: string[] = [];
+  ngOnInit() {
+    this._httpService.get(this.accessPointUrl).subscribe(values => {
+      this.apiValues = values.json() as string[];
+    });
+  }
 }

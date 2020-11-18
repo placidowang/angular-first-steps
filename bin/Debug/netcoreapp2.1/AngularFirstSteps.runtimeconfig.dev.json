@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\Placido\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Placido\\.nuget\\packages"
+    ]
+  }
+}
