@@ -1,7 +1,24 @@
-<div>
+<!-- <div>
   <h1>Application says what?</h1>
   <ul>
     <li *ngFor="let value of apiValues">{{value}}</li>
   </ul>
-</div>
-<router-outlet></router-outlet>
+</div> -->
+
+
+<section class="jumbotron">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <app-add-update-notes (noteCreated)="createUpdateNote($event)" [note]="currentNote"></app-add-update-notes>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <app-notes-listing [notes]="notes" (editClicked)="editNote($event)" (newClicked)="newNote()" (recordDeleted)="deleteNote($event)"></app-notes-listing>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- <router-outlet></router-outlet> -->
